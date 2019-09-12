@@ -9,20 +9,27 @@ public class DebugExercise1 {
         return result;
     }
 
+    public static int divideThenRound_(int top, int bottom){
+        float quotient = (float) top / (float) bottom;
+        int result = Math.round(quotient);
+        return result;
+    }
+
+
     public static void main(String[] args) {
         int t = 10;
         int b = 2;
-        int result = divideThenRound(t, b);
+        int result = divideThenRound_(t, b);
         System.out.println("round(" + t + "/" + b + ")=" + result);
 
         int t2 = 9;
         int b2 = 4;
-        int result2 = divideThenRound(t2, b2);
+        int result2 = divideThenRound_(t2, b2);
         System.out.println("round(" + t2 + "/" + b2 + ")=" + result2);
 
         int t3 = 3;
         int b3 = 4;
-        int result3 = divideThenRound(t3, b3);
+        int result3 = divideThenRound_(t3, b3);
         System.out.println("round(" + t3 + "/" + b3 + ")=" + result3);
     }
 }
