@@ -1,3 +1,4 @@
+import javax.print.DocFlavor;
 import java.util.Formatter;
 
 /**
@@ -29,7 +30,7 @@ public class IntList {
      * A List with null rest, and first = 0.
      */
     public IntList() {
-    /* NOTE: public IntList () { }  would also work. */
+        /* NOTE: public IntList () { }  would also work. */
         this(0, null);
     }
 
@@ -82,8 +83,15 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList p = A;
+        while (p.rest != null){
+            p = p.rest;
+        }
+        p.rest = B;
+        return A;
     }
+
+
 
     /**
      * Returns a list consisting of the elements of A followed by the
@@ -91,8 +99,32 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        IntList head = new IntList(A.first, null);
+        IntList p = head;
+        A = A.rest;
+        while (A != null){
+            p.rest = new IntList(A.first, null);
+            p = p.rest;
+            A = A.rest;
+        }
+        p.rest = B;
+        return head;
     }
+
+    /*
+    public static IntList catenate_(IntList A, IntList B){
+        if (B == null){
+            return A;
+        }
+        IntList p = A;
+        IntList head = p;
+        while (p.rest != null){
+            p = p.rest;
+        }
+        p.rest = new IntList(B.first, null);
+        return catenate_(head, B.rest);
+    }
+    */
 
 
 
