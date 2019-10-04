@@ -34,12 +34,20 @@ public class IntList {
 		return rest.get(i - 1);
 	}
 
+	public int get_iterative(int i){
+		IntList p = this;
+		for (int k = 0; k < i; k++){
+			p = p.rest;
+		}
+		return p.first;
+	}
+
 	public static void main(String[] args) {
 		IntList L = new IntList(15, null);
 		L = new IntList(10, L);
 		L = new IntList(5, L);
 
 		System.out.println(L.iterativeSize());
-		System.out.println(L.get(1));
+		System.out.println(L.get_iterative(1));
 	}
 } 
