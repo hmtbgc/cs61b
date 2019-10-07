@@ -132,7 +132,7 @@ public class LinkedListDeque <T> {
     }
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         LinkedListDeque <Integer> L = new LinkedListDeque <> ();
         L.addFirst(10);
         L.addFirst(20);
