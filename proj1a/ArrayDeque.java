@@ -165,7 +165,7 @@ public class ArrayDeque <T> {
         return items[(index + fpoint + 1) % cap];
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         ArrayDeque <Integer> A = new ArrayDeque <> ();
         for (int i = 1; i < 2; ++i) {
             A.addFirst(i * 10);
