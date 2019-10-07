@@ -50,7 +50,7 @@ public class selectionSort {
 		}
 	}
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		int[] test = new int[]{1, 4, 2, 1, 3, 6, 7};
 		int size = Integer.parseInt(args[0]);
 		int[] a = new int[size];
