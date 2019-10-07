@@ -199,7 +199,10 @@ public class ArrayDeque <T> {
         System.out.println(AA.size());
         System.out.println(AA.removeFirst());
         AA.printDeque();
-        System.out.println(AA.removeLast());
-        AA.printDeque();
+        for (int i = 0; i < 5; ++i) {
+            System.out.println(AA.removeLast());
+            System.out.println(AA.removeFirst());
+            AA.printDeque();
+        }
     }
 }
