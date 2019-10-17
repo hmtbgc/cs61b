@@ -16,20 +16,23 @@ public class ArrayRingBuffer<T> implements BoundedQueue<T>  {
     private T[] rb;
 
     private class ArrayRingBufferIterator implements Iterator<T> {
-        private int pos;
+        private int pos, count;
         public ArrayRingBufferIterator() {
             pos = first;
+            count = 0;
         }
         public boolean hasNext() {
-            return fillCount() < capacity();
+            return count < fillCount();
         }
         public T next() {
+            T item = rb[pos];
             if (pos + 1 >= capacity()) {
                 pos = 0;
             } else {
                 pos = pos + 1;
             }
-            return rb[pos];
+            count = count + 1;
+            return item;
         }
     }
 

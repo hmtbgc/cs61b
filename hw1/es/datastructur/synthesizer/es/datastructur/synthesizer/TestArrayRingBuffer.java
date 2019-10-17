@@ -34,6 +34,21 @@ public class TestArrayRingBuffer {
     }
 
     @Test
+    public void TestforIterative() {
+        ArrayRingBuffer<Integer> a = new ArrayRingBuffer<>(3);
+        for (int i = 0; i < 3; ++i) {
+            a.enqueue(i);
+        }
+        int[] expect = new int[3];
+        int[] actual = new int[]{0, 1, 2};
+        int index = 0;
+        for (Integer i : a) {
+            expect[index] = i;
+            index = index + 1;
+        }
+        assertArrayEquals(expect, actual);
+    }
+    @Test
     public void TestforEquals() {
         ArrayRingBuffer<Integer> a = new ArrayRingBuffer<>(3);
         ArrayRingBuffer<Integer> b = new ArrayRingBuffer<>(3);
