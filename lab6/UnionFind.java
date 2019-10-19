@@ -64,6 +64,9 @@ public class UnionFind {
                 father[root2] = root1;
                 size[root1] = size[root1] + size[root2];
             }
+        } else {
+            int root1 = find(v1);
+            int root2 = find(v2);
         }
     }
 
@@ -78,10 +81,13 @@ public class UnionFind {
         int root = r;
         r = vertex;
         while (parent(r) >= 0) {
+            if (parent(parent(r)) >= 0) {
+                size[parent(r)] = size[parent(r)] - size[r];
+            }
             father[r] = root;
             r = parent(r);
         }
-        // bug about size[]
+
         return root;
     }
 
