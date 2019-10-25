@@ -11,6 +11,9 @@ public class Percolation {
     private int bottem;
 
     public Percolation(int N) {
+        if (N <= 0) {
+            throw new IllegalArgumentException("N <= 0!");
+        }
         gird = new boolean[N][N];
         size = N;
         top = 0;
@@ -29,7 +32,7 @@ public class Percolation {
 
     public void open(int row, int col) {
         validate(row, col);
-        if(!isOpen(row, col)) {
+        if(isOpen(row, col)) {
             return;
         }
         gird[row][col] = true;
